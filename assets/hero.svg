@@ -1,0 +1,176 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="440" viewBox="0 0 1200 440" role="img" aria-labelledby="hero-title hero-desc">
+  <title id="hero-title">OCTA Shield - Anti-cheat</title>
+  <desc id="hero-desc">Protection for communities that cannot afford downtime.</desc>
+  <defs>
+    <clipPath id="frame"><rect width="1200" height="440" rx="28"/></clipPath>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#F3F3F3" fill-opacity=".09"/>
+    </pattern>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(930 220) scale(420)">
+      <stop offset="0" stop-color="#F43D16" stop-opacity=".5"/>
+      <stop offset=".4" stop-color="#F43D16" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#F43D16" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="scan" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#F43D16" stop-opacity="0"/>
+      <stop offset=".88" stop-color="#F43D16" stop-opacity=".14"/>
+      <stop offset="1" stop-color="#FF7658" stop-opacity=".85"/>
+    </linearGradient>
+    <linearGradient id="beam" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#F43D16" stop-opacity="0"/>
+      <stop offset="1" stop-color="#F43D16" stop-opacity=".45"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#F94C2B"/>
+      <stop offset="1" stop-color="#FF2B51"/>
+    </linearGradient>
+    <linearGradient id="fade-x" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#050505"/>
+      <stop offset="1" stop-color="#050505" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="10"/></filter>
+    <style>
+      .sans { font-family: Unageo, Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+      .serif { font-family: "PP Editorial Old", "Iowan Old Style", "Palatino Linotype", Georgia, serif; }
+      .mono { font-family: "JetBrains Mono", "Cascadia Code", "SF Mono", Menlo, Consolas, monospace; }
+      .pulse { animation: pulse 6s ease-in-out infinite; }
+      .scanline { animation: scan 7s linear infinite; }
+      .blip { animation: blip 4s linear infinite; }
+      .dot { animation: blink 1.6s ease-in-out infinite; }
+      .rise { animation: rise .9s cubic-bezier(.2,.8,.2,1) both; }
+      @keyframes pulse { 0%, 100% { opacity: .7; } 50% { opacity: 1; } }
+      @keyframes scan { from { transform: translateY(0); } to { transform: translateY(580px); } }
+      @keyframes blip { 0% { opacity: 0; } 3% { opacity: 1; } 55% { opacity: .18; } 100% { opacity: 0; } }
+      @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: .25; } }
+      @keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+    </style>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <rect width="1200" height="440" fill="#050505"/>
+    <rect width="1200" height="440" fill="url(#grid)"/>
+    <rect class="pulse" width="1200" height="440" fill="url(#glow)"/>
+
+    <!-- Radar / brand mark -->
+    <g transform="translate(930 220)">
+      <circle r="60" fill="none" stroke="#F3F3F3" stroke-opacity=".08"/>
+      <circle r="110" fill="none" stroke="#F3F3F3" stroke-opacity=".08"/>
+      <circle r="160" fill="none" stroke="#F3F3F3" stroke-opacity=".08"/>
+      <circle r="210" fill="none" stroke="#F3F3F3" stroke-opacity=".14" stroke-dasharray="2 10">
+        <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="-360 0 0" dur="90s" repeatCount="indefinite"/>
+      </circle>
+      <line x1="-210" x2="210" y1="0" y2="0" stroke="#F3F3F3" stroke-opacity=".06"/>
+      <line x1="0" x2="0" y1="-210" y2="210" stroke="#F3F3F3" stroke-opacity=".06"/>
+
+      <!-- Sweep -->
+      <g>
+        <path d="M0 0 L210 0 A210 210 0 0 0 160.9 -135 Z" fill="url(#beam)"/>
+        <line x1="0" x2="210" y1="0" y2="0" stroke="#FF7658" stroke-opacity=".9" stroke-width="1.5"/>
+        <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="4s" repeatCount="indefinite"/>
+      </g>
+
+      <!-- Ping -->
+      <circle r="60" fill="none" stroke="#F43D16" stroke-opacity=".6">
+        <animate attributeName="r" from="60" to="230" dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-opacity" from=".55" to="0" dur="4s" repeatCount="indefinite"/>
+      </circle>
+
+      <!-- Blips, timed to the sweep (4s / 360deg) -->
+      <g class="blip" style="animation-delay:.44s">
+        <circle cx="115" cy="96" r="9" fill="#F43D16" fill-opacity=".25"/>
+        <circle cx="115" cy="96" r="3.5" fill="#F43D16"/>
+      </g>
+      <g class="blip" style="animation-delay:1.78s">
+        <circle cx="-89" cy="32" r="9" fill="#F3F3F3" fill-opacity=".12"/>
+        <circle cx="-89" cy="32" r="3" fill="#F3F3F3" fill-opacity=".8"/>
+      </g>
+      <g class="blip" style="animation-delay:2.78s">
+        <circle cx="-63" cy="-174" r="9" fill="#F43D16" fill-opacity=".25"/>
+        <circle cx="-63" cy="-174" r="3.5" fill="#F43D16"/>
+      </g>
+
+      <!-- Mark (brand glyph) -->
+      <g transform="translate(-168 -168) scale(.42)">
+        <path filter="url(#soft)" opacity=".7" fill="#F43D16" d="M304.627 423.903C304.07 423.917 303.514 423.936 302.96 423.96C301.976 423.987 300.99 424 300 424C240.353 424 192 375.647 192 316C192 256.353 240.353 208 300 208C354.607 208 399.748 248.527 406.987 301.145C407.077 301.947 407.177 302.746 407.289 303.541C413.205 345.689 449.41 378.12 493.189 378.12C494.012 378.12 494.833 378.109 495.651 378.086C495.714 378.084 495.778 378.08 495.842 378.079C495.924 378.076 496.006 378.075 496.087 378.073C496.323 378.065 496.559 378.056 496.794 378.047C497.859 378.016 498.928 378 500 378C559.647 378 608 426.353 608 486C608 545.647 559.647 594 500 594C445.686 594 400.737 553.907 393.133 501.701C392.993 500.327 392.82 498.963 392.617 497.608C386.338 455.873 350.326 423.875 306.84 423.875C306.1 423.875 305.362 423.884 304.627 423.903Z"/>
+        <path fill="#F43D16" d="M304.627 423.903C304.07 423.917 303.514 423.936 302.96 423.96C301.976 423.987 300.99 424 300 424C240.353 424 192 375.647 192 316C192 256.353 240.353 208 300 208C354.607 208 399.748 248.527 406.987 301.145C407.077 301.947 407.177 302.746 407.289 303.541C413.205 345.689 449.41 378.12 493.189 378.12C494.012 378.12 494.833 378.109 495.651 378.086C495.714 378.084 495.778 378.08 495.842 378.079C495.924 378.076 496.006 378.075 496.087 378.073C496.323 378.065 496.559 378.056 496.794 378.047C497.859 378.016 498.928 378 500 378C559.647 378 608 426.353 608 486C608 545.647 559.647 594 500 594C445.686 594 400.737 553.907 393.133 501.701C392.993 500.327 392.82 498.963 392.617 497.608C386.338 455.873 350.326 423.875 306.84 423.875C306.1 423.875 305.362 423.884 304.627 423.903Z"/>
+      </g>
+    </g>
+
+    <!-- Fade so copy stays readable over the radar -->
+    <rect x="560" y="0" width="160" height="440" fill="url(#fade-x)" opacity=".9"/>
+
+    <!-- Copy -->
+    <g class="rise" style="animation-delay:.05s">
+      <text class="mono" x="64" y="86" font-size="11" letter-spacing="3.2" fill="#F43D16">ANTI-CHEAT  ·  OPERATIONAL SECURITY</text>
+    </g>
+
+    <!-- Wordmark (brand vector) -->
+    <g class="rise" style="animation-delay:.15s">
+      <g transform="translate(60.52 100.95) scale(2.2)" fill="#F3F3F3">
+        <path fill="#F43D16" d="M11.1455 22.0669C5.86428 22.0669 1.58301 17.7243 1.58301 12.3675C1.58301 7.01057 5.86428 2.66797 11.1455 2.66797C15.9805 2.66797 19.9774 6.30773 20.6183 11.0333C20.6263 11.1053 20.6352 11.1771 20.6451 11.2485C21.1689 15.0338 24.3745 17.9465 28.2508 17.9465C28.3237 17.9465 28.3963 17.9454 28.4687 17.9434C28.5025 17.9424 28.5362 17.9409 28.57 17.9399C28.6643 17.9371 28.7589 17.9357 28.8538 17.9357C34.1351 17.9357 38.4163 22.2783 38.4163 27.6352C38.4163 32.992 34.1351 37.3346 28.8538 37.3346C24.0448 37.3346 20.0649 33.7338 19.3917 29.0453C19.3792 28.9219 19.364 28.7993 19.3459 28.6777C18.79 24.9294 15.6014 22.0557 11.7511 22.0557C11.5482 22.0557 11.3474 22.0669 11.1455 22.0669Z"/>
+        <path d="M77.288 22.6349V33.1486H56.2335L50.9902 27.8917V22.6349H56.2335V27.8917H72.004V22.6349H61.5039L56.2335 17.3781H72.004L77.2744 22.6349H77.288Z"/>
+        <path d="M77.2744 12.1217V12.1082H72.004V12.1217H56.2471V17.3786H50.9902V6.85132H72.004L77.2744 12.1217Z"/>
+        <path d="M106.86 6.85132V33.1627H101.603V20.0002H93.7106L85.8186 27.8922V33.1627H80.5618V6.85132H85.8186V20.0002L91.0754 14.7434H101.603V6.85132H106.86Z"/>
+        <path d="M110.16 6.85132H115.417V33.1491H110.16V6.85132Z"/>
+        <path d="M144.975 12.1489V6.85132H129.177L123.934 12.1489H144.975Z"/>
+        <path d="M123.934 27.8922V22.6354H139.718V17.3786H123.934V6.85132H118.677V33.1627H144.975V27.8922H123.934Z"/>
+        <path d="M153.518 6.85132V27.8922H169.303V33.1491H158.775L153.518 27.8922V33.1491H148.262V6.85132H153.518Z"/>
+        <path d="M201.51 12.1219H177.833V33.1492H172.577V6.83789H196.253L201.51 12.1219Z"/>
+        <path d="M201.51 14.7426V25.2698L193.618 33.1483H183.104L177.833 27.8914H190.996L196.253 22.6346V14.7426H201.51Z"/>
+      </g>
+    </g>
+
+    <g class="rise" style="animation-delay:.3s">
+      <text class="serif" x="64" y="224" font-size="34" fill="#F3F3F3">Protection for communities</text>
+      <text class="serif" x="64" y="264" font-size="34" fill="#F3F3F3">that cannot afford <tspan fill="url(#accent)" font-style="italic">downtime.</tspan></text>
+    </g>
+
+    <g class="rise" style="animation-delay:.45s">
+      <text class="sans" x="64" y="302" font-size="15" fill="#8D8D8D">Real-time defense for servers, games and tournaments against cheats, injections</text>
+      <text class="sans" x="64" y="324" font-size="15" fill="#8D8D8D">and malicious behavior, with full auditing and expert incident response.</text>
+    </g>
+
+    <!-- Stats -->
+    <g class="rise sans" style="animation-delay:.6s">
+      <g>
+        <text x="64" y="378" font-size="26" font-weight="600" fill="#F3F3F3">+5M</text>
+        <text class="mono" x="64" y="398" font-size="10" letter-spacing="1.6" fill="#8D8D8D">PLAYERS SHIELDED</text>
+      </g>
+      <line x1="214" x2="214" y1="356" y2="402" stroke="#F3F3F3" stroke-opacity=".12"/>
+      <g>
+        <text x="238" y="378" font-size="26" font-weight="600" fill="#F3F3F3">+10 yrs</text>
+        <text class="mono" x="238" y="398" font-size="10" letter-spacing="1.6" fill="#8D8D8D">IN THE FIELD</text>
+      </g>
+      <line x1="388" x2="388" y1="356" y2="402" stroke="#F3F3F3" stroke-opacity=".12"/>
+      <g>
+        <text x="412" y="378" font-size="26" font-weight="600" fill="#F3F3F3">24/7</text>
+        <text class="mono" x="412" y="398" font-size="10" letter-spacing="1.6" fill="#8D8D8D">LIVE MONITORING</text>
+      </g>
+      <line x1="548" x2="548" y1="356" y2="402" stroke="#F3F3F3" stroke-opacity=".12"/>
+      <g>
+        <text x="572" y="378" font-size="26" font-weight="600" fill="#F43D16">Esports</text>
+        <text class="mono" x="572" y="398" font-size="10" letter-spacing="1.6" fill="#8D8D8D">TOURNAMENT READY</text>
+      </g>
+    </g>
+
+    <!-- Status -->
+    <g class="mono" font-size="11" letter-spacing="1.8">
+      <circle class="dot" cx="900" cy="44" r="3.5" fill="#F43D16"/>
+      <text x="912" y="48" fill="#F3F3F3">LIVE</text>
+      <text x="956" y="48" fill="#8D8D8D">·  ALL SYSTEMS NOMINAL</text>
+    </g>
+
+    <!-- HUD corners -->
+    <g fill="none" stroke="#F43D16" stroke-opacity=".7" stroke-width="1.5">
+      <path d="M40 24 V40 H24"/>
+      <path d="M1160 24 V40 H1176"/>
+      <path d="M40 416 V400 H24"/>
+      <path d="M1160 416 V400 H1176"/>
+    </g>
+
+    <!-- Scanline -->
+    <rect class="scanline" x="0" y="-140" width="1200" height="140" fill="url(#scan)"/>
+
+    <rect x=".5" y=".5" width="1199" height="439" rx="27.5" fill="none" stroke="#F3F3F3" stroke-opacity=".12"/>
+  </g>
+</svg>

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="250" viewBox="0 0 1200 250" role="img" aria-labelledby="footer-title">
+  <title id="footer-title">Protect your community before the next threat arrives.</title>
+  <defs>
+    <clipPath id="frame"><rect width="1200" height="250" rx="28"/></clipPath>
+    <linearGradient id="wm" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#F3F3F3" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#F3F3F3" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#F94C2B"/>
+      <stop offset="1" stop-color="#FF2B51"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#F43D16" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#F43D16"/>
+      <stop offset="1" stop-color="#F43D16" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(600 0) scale(620 220)">
+      <stop offset="0" stop-color="#F43D16" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#F43D16" stop-opacity="0"/>
+    </radialGradient>
+    <style>
+      .serif { font-family: "PP Editorial Old", "Iowan Old Style", "Palatino Linotype", Georgia, serif; }
+      .mono { font-family: "JetBrains Mono", "Cascadia Code", "SF Mono", Menlo, Consolas, monospace; }
+      .shimmer { animation: shimmer 5s ease-in-out infinite; }
+      @keyframes shimmer { 0%, 100% { opacity: .55; } 50% { opacity: 1; } }
+    </style>
+  </defs>
+  <g clip-path="url(#frame)">
+    <rect width="1200" height="250" fill="#050505"/>
+    <rect width="1200" height="250" fill="url(#glow)"/>
+    <rect class="shimmer" x="300" y="0" width="600" height="1.5" fill="url(#line)"/>
+
+    <!-- Watermark wordmark (brand vector), fading out -->
+    <g transform="translate(27.3 85.3) scale(5.5)" fill="url(#wm)">
+      <path d="M11.1455 22.0669C5.86428 22.0669 1.58301 17.7243 1.58301 12.3675C1.58301 7.01057 5.86428 2.66797 11.1455 2.66797C15.9805 2.66797 19.9774 6.30773 20.6183 11.0333C20.6263 11.1053 20.6352 11.1771 20.6451 11.2485C21.1689 15.0338 24.3745 17.9465 28.2508 17.9465C28.3237 17.9465 28.3963 17.9454 28.4687 17.9434C28.5025 17.9424 28.5362 17.9409 28.57 17.9399C28.6643 17.9371 28.7589 17.9357 28.8538 17.9357C34.1351 17.9357 38.4163 22.2783 38.4163 27.6352C38.4163 32.992 34.1351 37.3346 28.8538 37.3346C24.0448 37.3346 20.0649 33.7338 19.3917 29.0453C19.3792 28.9219 19.364 28.7993 19.3459 28.6777C18.79 24.9294 15.6014 22.0557 11.7511 22.0557C11.5482 22.0557 11.3474 22.0669 11.1455 22.0669Z"/>
+      <path d="M77.288 22.6349V33.1486H56.2335L50.9902 27.8917V22.6349H56.2335V27.8917H72.004V22.6349H61.5039L56.2335 17.3781H72.004L77.2744 22.6349H77.288Z"/>
+      <path d="M77.2744 12.1217V12.1082H72.004V12.1217H56.2471V17.3786H50.9902V6.85132H72.004L77.2744 12.1217Z"/>
+      <path d="M106.86 6.85132V33.1627H101.603V20.0002H93.7106L85.8186 27.8922V33.1627H80.5618V6.85132H85.8186V20.0002L91.0754 14.7434H101.603V6.85132H106.86Z"/>
+      <path d="M110.16 6.85132H115.417V33.1491H110.16V6.85132Z"/>
+      <path d="M144.975 12.1489V6.85132H129.177L123.934 12.1489H144.975Z"/>
+      <path d="M123.934 27.8922V22.6354H139.718V17.3786H123.934V6.85132H118.677V33.1627H144.975V27.8922H123.934Z"/>
+      <path d="M153.518 6.85132V27.8922H169.303V33.1491H158.775L153.518 27.8922V33.1491H148.262V6.85132H153.518Z"/>
+      <path d="M201.51 12.1219H177.833V33.1492H172.577V6.83789H196.253L201.51 12.1219Z"/>
+      <path d="M201.51 14.7426V25.2698L193.618 33.1483H183.104L177.833 27.8914H190.996L196.253 22.6346V14.7426H201.51Z"/>
+    </g>
+
+    <text class="serif" x="600" y="58" text-anchor="middle" font-size="30" fill="#F3F3F3">Protect your community <tspan fill="url(#accent)" font-style="italic">before</tspan> the next threat arrives.</text>
+    <text class="mono" x="600" y="86" text-anchor="middle" font-size="11" letter-spacing="2.6" fill="#8D8D8D">PROTECT YOUR PLAYERS  ·  PROTECT WHAT YOU BUILT  ·  PROTECT YOUR STAFF</text>
+
+    <rect x=".5" y=".5" width="1199" height="249" rx="27.5" fill="none" stroke="#F3F3F3" stroke-opacity=".12"/>
+  </g>
+</svg>
